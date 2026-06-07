@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +32,8 @@ a{color:inherit;text-decoration:none}
   --rule:        rgba(44,45,49,0.12);
   --serif: 'Cormorant', Georgia, serif;
   --sans:  'Outfit', sans-serif;
+  --text-dark:   #1E1F23;
+  --text-light:  #F9F8F6;
 }
 
 /* ── HERO ───────────────────────────────── */
@@ -137,22 +138,23 @@ a{color:inherit;text-decoration:none}
 .card.mid{background:var(--sage-dark)}
 .card.sage{background:var(--sage)}
 
-/* ── CARD TEXT BLOCK ────────────────────── */
+/* ── CARD TEXT BLOCK & HIGH CONTRAST COLORS ── */
 .ct{padding:28px 24px 20px}
 .eyebrow{
   display:block;font-weight:500;
   font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--oak);margin-bottom:10px;
+  color:var(--bramble);margin-bottom:10px;
 }
 .card.dark .eyebrow,
 .card.darker .eyebrow,
 .card.mid .eyebrow{ color:var(--oak) }
+.card.sage .eyebrow{ color:var(--sage-deeper) }
 
 h2.card-title{
   font-family:var(--serif);font-weight:300;
   font-size:clamp(28px,7vw,38px);
   line-height:1.12;letter-spacing:-.01em;
-  color:var(--malm);margin-bottom:16px;
+  color:var(--text-dark);margin-bottom:16px;
 }
 h2.card-title em{font-style:italic;color:var(--bramble)}
 .card.dark h2.card-title,
@@ -179,24 +181,26 @@ h2.card-title em{font-style:italic;color:var(--bramble)}
 .card-body.open{ max-height:1400px }
 .card-body-inner{padding:0 24px 20px}
 
-p.body{font-size:15px;line-height:1.82;color:#3A3B3F;margin-bottom:14px}
+p.body{font-size:15px;line-height:1.82;color:#1E1F23;margin-bottom:14px}
 p.body:last-child{margin-bottom:0}
 p.body.light{color:rgba(249,248,246,.72)}
-p.body.muted{color:#555A50}
+p.body.muted{color:#1E1F23}
 
 /* Read more toggle */
 .read-more{
   display:flex;align-items:center;gap:8px;
   padding:10px 24px 20px;
   font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--oak-dark);cursor:pointer;
+  color:var(--bramble);cursor:pointer;
   -webkit-tap-highlight-color:transparent;
   user-select:none;transition:color .2s;
   background:none;border:none;width:100%;text-align:left;
+  font-weight: 500;
 }
 .card.dark .read-more,
 .card.darker .read-more,
 .card.mid .read-more{ color:var(--oak) }
+.card.sage .read-more{ color:var(--sage-deeper) }
 .read-more:active{ color:var(--bramble) }
 .read-more-icon{
   font-size:16px;line-height:1;
@@ -226,7 +230,7 @@ p.body.muted{color:#555A50}
 .card.dark .pq cite,
 .card.mid .pq cite{ color:rgba(249,248,246,.32) }
 
-/* ── FEATURED VENDOR MEMORY BRIDGE ───────── */
+/* ── EDITORIAL VENDOR MEMORY BRIDGE ──────── */
 .featured-memory {
   background: var(--cream);
   padding: 48px 24px;
@@ -243,7 +247,7 @@ p.body.muted{color:#555A50}
   font-style: italic;
   font-size: clamp(20px, 5.5vw, 24px);
   line-height: 1.6;
-  color: var(--malm);
+  color: var(--text-dark);
   margin-bottom: 20px;
   position: relative;
 }
@@ -251,7 +255,7 @@ p.body.muted{color:#555A50}
   content: "“";
   font-family: var(--serif);
   font-size: 80px;
-  color: rgba(193, 154, 107, 0.15);
+  color: rgba(107, 90, 64, 0.12);
   position: absolute;
   top: -40px;
   left: -15px;
@@ -265,14 +269,14 @@ p.body.muted{color:#555A50}
 .memory-line {
   height: 1px;
   width: 32px;
-  background: var(--oak);
+  background: var(--bramble);
 }
 .memory-author {
   font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--sage-dark);
-  font-weight: 400;
+  color: var(--bramble);
+  font-weight: 500;
 }
 
 /* ── CARD PHOTO ─────────────────────────── */
@@ -282,19 +286,19 @@ p.body.muted{color:#555A50}
   aspect-ratio:16/9;object-fit:cover;
 }
 .card-photo-caption{
-  padding:10px 24px 14px;
+  padding:14px 24px 16px;
   background:var(--malm-deep);
 }
 .card.sage .card-photo-caption,
 .card.mid .card-photo-caption{ background:rgba(30,31,35,.95) }
 .cpc-label{
   font-size:10px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--oak);margin-bottom:3px;
+  color:var(--oak);margin-bottom:4px;
 }
 .cpc-text{
   font-family:var(--serif);font-style:italic;
-  font-size:13px;line-height:1.5;
-  color:rgba(249,248,246,.7);
+  font-size:14px;line-height:1.5;
+  color:var(--text-light);
 }
 
 .photo-pair{
@@ -334,20 +338,21 @@ p.body.muted{color:#555A50}
 }
 .vtag{
   font-size:10px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--malm);padding:5px 12px;
-  border:1px solid rgba(44,45,49,.22);
+  color:var(--text-dark);padding:5px 12px;
+  border:1px solid rgba(44,45,49,0.3);
   background:rgba(249,248,246,.55);
+  font-weight: 400;
 }
 
 /* ── LIST ITEMS ─────────────────────────── */
-.item-list{border-top:1px solid rgba(44,45,49,.1)}
+.item-list{border-top:1px solid rgba(44,45,49,.15)}
 .card.dark .item-list,
 .card.darker .item-list,
 .card.mid .item-list{ border-top-color:rgba(249,248,246,.1) }
 
 .list-item{
   padding:18px 24px;
-  border-bottom:1px solid rgba(44,45,49,.08);
+  border-bottom:1px solid rgba(44,45,49,.1);
 }
 .card.dark .list-item,
 .card.darker .list-item,
@@ -355,525 +360,8 @@ p.body.muted{color:#555A50}
 
 .li-name{
   font-family:var(--serif);font-size:18px;font-weight:400;
-  color:var(--malm);margin-bottom:3px;
+  color:var(--text-dark);margin-bottom:3px;
   display:flex;justify-content:space-between;align-items:baseline;gap:8px;
 }
 .card.dark .li-name,
-.card.mid .li-name{ color:var(--alabaster) }
-.li-dist{
-  font-size:10px;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--oak-dark);white-space:nowrap;flex-shrink:0;
-}
-.card.dark .li-dist,.card.mid .li-dist{ color:var(--oak) }
-.li-text{font-size:13px;line-height:1.72;color:#555A50}
-.card.dark .li-text,.card.mid .li-text{ color:rgba(249,248,246,.55) }
-
-/* ── TRANSPORT ACCORDION ────────────────── */
-.t-modes{border-top:1px solid rgba(44,45,49,.12);margin-top:0}
-.t-head{
-  padding:15px 24px;
-  border-bottom:1px solid rgba(44,45,49,.08);
-  display:flex;align-items:center;justify-content:space-between;
-  font-family:var(--serif);font-style:italic;
-  font-size:17px;color:var(--malm);cursor:pointer;
-  -webkit-tap-highlight-color:transparent;user-select:none;
-}
-.t-toggle{font-size:14px;color:var(--bramble);font-style:normal}
-.t-body{display:none;background:var(--alabaster)}
-.t-body.open{display:block}
-.route{
-  display:flex;justify-content:space-between;align-items:baseline;
-  padding:9px 24px;border-bottom:1px solid rgba(44,45,49,.06);gap:10px;
-}
-.route-n{font-size:13px;color:var(--malm);flex:1;line-height:1.4}
-.route-t{
-  font-family:var(--serif);font-size:19px;
-  color:var(--oak-dark);white-space:nowrap;
-}
-.route-u{font-size:10px;color:var(--bramble)}
-
-/* River panel */
-.river-panel{background:var(--malm);padding:20px 24px}
-.river-panel h4{
-  font-family:var(--serif);font-style:italic;
-  font-size:15px;color:var(--alabaster);margin-bottom:8px;
-}
-.pier-flow{font-size:11px;color:rgba(249,248,246,.42);line-height:2.2}
-.pier-flow strong{color:var(--oak);font-weight:500}
-.river-note{margin-top:8px;font-size:10px;color:rgba(249,248,246,.28)}
-
-/* Cycling */
-.cycle-panel{background:var(--cream);padding:18px 24px}
-.cycle-panel h4{
-  font-family:var(--serif);font-size:15px;font-weight:400;
-  color:var(--malm);margin-bottom:3px;
-}
-.cycle-panel p{font-size:12px;line-height:1.65;color:#555A50;margin:0}
-
-/* ── MERIDIAN ───────────────────────────── */
-.meridian-panel{
-  background:var(--malm);padding:24px;
-  position:relative;overflow:hidden;
-}
-.meridian-panel::before{
-  content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;
-  background:linear-gradient(to bottom,transparent,rgba(193,154,107,.4),transparent);
-}
-.meridian-panel p{
-  font-family:var(--serif);font-style:italic;
-  font-size:16px;line-height:1.7;
-  color:rgba(249,248,246,.85);text-align:center;margin:0;
-}
-.meridian-panel strong{color:var(--oak);font-style:normal;font-weight:500}
-
-/* ── TIMELINE ───────────────────────────── */
-.timeline{border-top:1px solid var(--rule)}
-.tl-item{
-  display:grid;grid-template-columns:60px 1fr;
-  gap:12px;padding:14px 24px;
-  border-bottom:1px solid var(--rule);align-items:start;
-}
-.tl-year{font-size:11px;letter-spacing:.09em;color:var(--oak-dark);font-weight:500;padding-top:2px}
-.tl-text{font-size:13px;line-height:1.72;color:#555A50}
-.tl-text strong{color:var(--malm);font-weight:500}
-
-/* ── DRIVE LINK ─────────────────────────── */
-.drive-link{
-  display:block;text-align:center;
-  padding:16px 24px;
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(249,248,246,.38);
-  border-top:1px solid rgba(249,248,246,.08);
-  transition:color .2s;
-}
-.drive-link:active{color:var(--oak)}
-
-/* ── INVESTMENT SECTION ─────────────────── */
-.inv-item{padding:18px 24px;border-bottom:1px solid var(--rule)}
-.inv-name{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--malm);margin-bottom:2px}
-.inv-meta{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--bramble);margin-bottom:6px}
-.inv-item p{font-size:13px;line-height:1.7;color:#555A50;margin:0}
-
-/* ── FIXED CTA BUTTON ───────────────────── */
-.sticky-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  background: var(--oak);
-  color: var(--alabaster);
-  padding: 12px 20px;
-  font-size: 11px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  font-weight: 500;
-  border-radius: 4px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  transition: background .2s, transform .2s;
-}
-.sticky-cta:active {
-  background: var(--oak-dark);
-  transform: scale(0.97);
-}
-
-/* ── FOOTER ─────────────────────────────── */
-footer{
-  background:var(--malm);
-  padding:32px 24px calc(32px + env(safe-area-inset-bottom,0px));
-  margin-top:3px;
-}
-.ft-brand{font-family:var(--serif);font-size:14px;color:rgba(249,248,246,.45);margin-bottom:10px}
-.ft-note{font-size:11px;line-height:1.72;color:rgba(249,248,246,.22)}
-
-/* ── REVEAL ─────────────────────────────── */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-</style>
-</head>
-<body>
-
-<!-- FIXED STICKY CTA FOR MOBILE VIEWERS -->
-<a href="#" class="sticky-cta" onclick="alert('Please contact the listing estate agent directly to secure your viewing slot.')">Contact Agent to View</a>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Equinox · Island Gardens · E14 3GR</p>
-    <h1 class="hero-title">A calm retreat where water, light, and space <em>change the pace of the day.</em></h1>
-    <p class="hero-sub">A west-facing terrace home near the river — where the view is the reason, and everything else follows.</p>
-    <div class="hero-pills">
-      <span class="hero-pill">2 Bed · 1 Bath · 3rd Floor</span>
-      <span class="hero-pill">26 sqm West-Facing Terrace</span>
-      <span class="hero-pill">Island Gardens DLR · Opposite</span>
-    </div>
-  </div>
-  <div class="hero-nudge"><span>↓ explore</span></div>
-</section>
-
-<!-- NAV -->
-<nav class="nav">
-  <span class="nav-brand">Equinox · E14</span>
-  <div class="nav-links">
-    <a href="#terrace">Terrace</a>
-    <a href="#area">Area</a>
-    <a href="#greenwich">Greenwich</a>
-    <a href="#gallery1">Gallery</a>
-    <a href="#gallery2">Seasons</a>
-    <a href="#investment">Investment</a>
-  </div>
-</nav>
-
-<!-- ═══ FEED ═══════════════════════════════════════ -->
-<div class="feed">
-
-  <!-- CARD 1 — Vendor note (Exposing top layer, hiding secondary info) -->
-  <div class="card dark reveal">
-    <div class="ct">
-      <span class="eyebrow">A note from the vendor</span>
-      <h2 class="card-title">Twenty years.<br>One <em>remarkable</em> home.</h2>
-      <p class="card-lead">I have often thought that this home gave me something increasingly rare in London: room to breathe.</p>
-      <p class="body light" style="margin-top: 14px;">Over twenty years, the river, the open sky, and the changing light around Island Gardens gradually shaped the rhythm of daily life here. Morning coffee outside, walks beside the Thames, and the ease of stepping into Greenwich whenever the mood suited became rituals, not just activities.</p>
-    </div>
-    <button class="read-more" onclick="toggleRead(this)">
-      Read more about this chapter <span class="read-more-icon">+</span>
-    </button>
-    <div class="card-body">
-      <div class="card-body-inner">
-        <p class="body light">This became far more than simply a flat; it has been my sanctuary within the city. The true luxury here isn't something you can easily measure in a standard estate agent layout. It is the daily feeling of total peace it provides.</p>
-        <p class="body light">Leaving for the south coast now feels like the right next chapter, but the quiet rhythm of this place will be missed enormously.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Spec strip -->
-  <div class="card darker">
-    <div class="spec-strip">
-      <div class="spec-cell"><div class="spec-val">66</div><div class="spec-lbl">Sq metres</div></div>
-      <div class="spec-cell"><div class="spec-val">26</div><div class="spec-lbl">Sqm terrace</div></div>
-      <div class="spec-cell"><div class="spec-val">2</div><div class="spec-lbl">Bedrooms</div></div>
-      <div class="spec-cell"><div class="spec-val">3rd</div><div class="spec-lbl">Floor</div></div>
-    </div>
-  </div>
-
-  <!-- EDITORIAL BRIDGE: STANDALONE VENDOR MEMORY -->
-  <section class="featured-memory reveal">
-    <div class="memory-container">
-      <blockquote class="memory-quote">
-        My favorite ritual has always been watching the autumn dusk settle from the corner of the deck. As the lights of the Cutty Sark and the City flick on together, the entire river valley seems to quieten down for the night. It is a view I have looked at for twenty years, and it has never once looked the same twice.
-      </blockquote>
-      <div class="memory-meta">
-        <span class="memory-line"></span>
-        <span class="memory-author">A personal reflection · The Terrace at Flat 62</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CARD 2 — Terrace intro + inline photo -->
-  <div class="card sage reveal" id="terrace">
-    <div class="ct">
-      <span class="eyebrow">The terrace</span>
-      <h2 class="card-title">26 square metres<br>of <em>golden hour.</em></h2>
-      <p class="card-lead">The terrace is where this home quietly expands — a second living room that happens to sit under an open sky.</p>
-    </div>
-    <div class="view-tags">
-      <span class="vtag">← City of London</span>
-      <span class="vtag">Canary Wharf ↑</span>
-      <span class="vtag">Cutty Sark ↓</span>
-    </div>
-    <div class="inline-photo">
-      <img src="https://lh3.googleusercontent.com/d/176ay21oWbmIQ8b_v0MML4KvMWxOtLXRX" alt="The west-facing terrace at Equinox">
-    </div>
-    <button class="read-more" onclick="toggleRead(this)">
-      Read terrace orientation &amp; design <span class="read-more-icon">+</span>
-    </button>
-    <div class="card-body">
-      <div class="card-body-inner">
-        <p class="body muted">Facing west, the terrace catches the afternoon sun from early spring through to late autumn. Across thirteen metres of direct length, the views map out the historical and modern milestones of the city: the City of London straight ahead, Canary Wharf to the north, and the Cutty Sark breaking the southern skyline.</p>
-        <p class="body muted">Breakfast outside became habitual; summer meals naturally stretched deep into the evening. Planting softens the structural edges, a tailored outdoor kitchen area makes it genuinely practical for entertaining, and a gentle water feature adds a quiet acoustic rhythm over the urban backdrop.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 3 — Gallery 1: The terrace & the view -->
-  <div class="card darker reveal" id="gallery1">
-    <div class="ct">
-      <span class="eyebrow">Gallery · The terrace &amp; the view</span>
-      <h2 class="card-title">Life on <em>the terrace.</em></h2>
-    </div>
-    <div class="card-photo">
-      <img src="https://lh3.googleusercontent.com/d/1uK69s8nk0hg1ILYyPQCPJSfXj6VrIECB" alt="The terrace">
-      <div class="card-photo-caption">
-        <div class="cpc-label">The terrace</div>
-        <div class="cpc-text">Late afternoon in September — the light that made us stay.</div>
-      </div>
-    </div>
-    <div class="card-photo">
-      <img src="https://lh3.googleusercontent.com/d/1nrSc6Xd4CI_ceDcGdp-u_NltmqTQfGL1" alt="Sundowners on the terrace">
-      <div class="card-photo-caption">
-        <div class="cpc-label">Sundowners on the terrace</div>
-        <div class="cpc-text">A quick drink after work that somehow lasted all evening.</div>
-      </div>
-    </div>
-    <div class="card-photo">
-      <img src="https://lh3.googleusercontent.com/d/1GstiVQiVJikr4u10kDEOwTELDKq0a9AL" alt="BBQ evening on the terrace">
-      <div class="card-photo-caption">
-        <div class="cpc-label">BBQ evening</div>
-        <div class="cpc-text">The terrace as an outdoor room — the city as the backdrop.</div>
-      </div>
-    </div>
-    <div class="card-photo">
-      <img src="https://lh3.googleusercontent.com/d/1cOgAcXTvFzQzknMjHPd0K6l3cOzE35s-" alt="Breakfast on the terrace">
-      <div class="card-photo-caption">
-        <div class="cpc-label">Breakfast on the terrace</div>
-        <div class="cpc-text">The best seat in the home — and it's outside.</div>
-      </div>
-    </div>
-    <div class="card-photo">
-      <img src="https://lh3.googleusercontent.com/d/1xgjEpfljZxS7Y8Hqm22Nai0KCRSk2BbQ" alt="The view west">
-      <div class="card-photo-caption">
-        <div class="cpc-label">The view west</div>
-        <div class="cpc-text">The City of London from the balustrade, just after dusk.</div>
-      </div>
-    </div>
-    <a class="drive-link" href="https://drive.google.com/drive/folders/1ps0dbukDYCndPYCA0XW57Rg_E4-uaXZ8" target="_blank" rel="noopener">View all photos in Google Drive →</a>
-  </div>
-
-  <!-- CARD 5 — Area: Green spaces -->
-  <div class="card sage reveal" id="area">
-    <div class="ct">
-      <span class="eyebrow">The area</span>
-      <h2 class="card-title">A peninsula wrapped in<br><em>green and water.</em></h2>
-      <p class="card-lead">The Isle of Dogs is bounded by water on three sides. That unique geography gives it something rare for inner London: genuine open breathing space, a working city farm, and miles of uninterrupted river path right on your doorstep.</p>
-    </div>
-    <div class="item-list">
-      <div class="list-item">
-        <div class="li-name">Island Gardens <span class="li-dist">Adjacent</span></div>
-        <div class="li-text">The legendary panorama of the Naval College that Canaletto painted in the 1750s — legally protected and sitting immediately next door.</div>
-      </div>
-      <div class="list-item">
-        <div class="li-name">Greenwich Foot Tunnel <span class="li-dist">5 min walk</span></div>
-        <div class="li-text">A Victorian architectural wonder under the Thames, open 24/7, emerging directly below the Cutty Sark.</div>
-      </div>
-      <div class="list-item">
-        <div class="li-name">Mudchute Park &amp; Farm <span class="li-dist">10 min walk</span></div>
-        <div class="li-text">32 acres of forested nature reserve and open countryside, home to one of Europe's largest city farms. Watching horses graze with Canary Wharf rising behind them never gets old.</div>
-      </div>
-    </div>
-    <button class="read-more" onclick="toggleRead(this)">
-      Read about the Thames Path route <span class="read-more-icon">+</span>
-    </button>
-    <div class="card-body">
-      <div class="card-body-inner">
-        <p class="body muted">The Thames Path National Trail runs the entire north bank of the Isle of Dogs loop — running past historic launch sites and the Docklands Sailing Centre before sweeping into Canary Wharf. The full loop is approximately 7 km, completely flat, and beautifully traffic-free. It is a genuinely exceptional environment for a morning run or a decompression walk at the end of a high-pressure week.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 6 — Gallery 2: Seasons -->
-  <div class="card darker reveal" id="gallery2">
-    <div class="ct">
-      <span class="eyebrow">Gallery · The Island through the seasons</span>
-      <h2 class="card-title">The Island,<br><em>all year round.</em></h2>
-    </div>
-    <div class="card-photo">
-      <img src="https://lh3.googleusercontent.com/d/1PXwyiCQAPxdSnR989DueY3oRWdjqpp1Y" alt="Mudchute Farm — winter sunrise">
-      <div class="card-photo-caption">
-        <div class="cpc-label">Mudchute Farm — winter sunrise</div>
-        <div class="cpc-text">Frost on the fields, Canary Wharf catching the first light.</div>
-      </div>
-    </div>
-    <div class="card-photo">
-      <img src="https://lh3.googleusercontent.com/d/1GagtJaDRVwlyXXbmrtoVasqi8RNviCdh" alt="Millwall Park in spring">
-      <div class="card-photo-caption">
-        <div class="cpc-label">Millwall Park in spring</div>
-        <div class="cpc-text">Eight minutes from the front door, and a world away from the city.</div>
-      </div>
-    </div>
-    <div class="card-photo">
-      <img src="https://lh3.googleusercontent.com/d/1sSmRgKaLBPgpIK4zSTh-smzP1vJs0GY4" alt="Cherry blossom, Millwall Park">
-      <div class="card-photo-caption">
-        <div class="cpc-label">Cherry blossom, Millwall Park</div>
-        <div class="cpc-text">Every April, without fail — one of the quieter pleasures of living here.</div>
-      </div>
-    </div>
-    <a class="drive-link" href="https://drive.google.com/drive/folders/1ps0dbukDYCndPYCA0XW57Rg_E4-uaXZ8" target="_blank" rel="noopener">View all seasonal photos in Google Drive →</a>
-  </div>
-
-  <!-- CARD 7 — Transport -->
-  <div class="card reveal">
-    <div class="ct">
-      <span class="eyebrow">Connected without feeling busy</span>
-      <h2 class="card-title">Every direction,<br><em>within reach.</em></h2>
-      <p class="card-lead">With Island Gardens DLR located directly opposite, the commute is effortless: Canary Wharf in 8 minutes, Bank in under 20, and fast links to the Elizabeth Line.</p>
-    </div>
-    <div class="t-modes">
-      <div class="t-head" onclick="toggleT(this)">
-        DLR &amp; Crossrail Connections
-        <span class="t-toggle">+</span>
-      </div>
-      <div class="t-body">
-        <div class="route"><span class="route-n">Island Gardens → Canary Wharf</span><span class="route-t">8 <span class="route-u">min</span></span></div>
-        <div class="route"><span class="route-n">Island Gardens → Bank</span><span class="route-t">~18 <span class="route-u">min</span></span></div>
-        <div class="route"><span class="route-n">Canary Wharf → Tottenham Court Road</span><span class="route-t">14 <span class="route-u">min</span></span></div>
-        <div class="route"><span class="route-n">Canary Wharf → Heathrow T2/T3</span><span class="route-t">40 <span class="route-u">min</span></span></div>
-      </div>
-    </div>
-    <div class="river-panel">
-      <h4>Uber Boat — Masthouse Terrace Pier</h4>
-      <div class="pier-flow">Barking → N. Greenwich → <strong>Masthouse Terrace</strong> → Canary Wharf → London Bridge → Waterloo</div>
-      <p class="river-note">Oyster cards accepted · An atmospheric, low-stress alternative to the morning commute.</p>
-    </div>
-  </div>
-
-  <!-- CARD 8 — Fitness -->
-  <div class="card sage reveal">
-    <div class="ct">
-      <span class="eyebrow">Health &amp; fitness</span>
-      <h2 class="card-title">An active life,<br><em>naturally built-in.</em></h2>
-      <p class="card-lead">From open-water discipline on the docks to high-performance training hubs in the Wharf, the area supports mental and physical wellbeing effortlessly.</p>
-    </div>
-    <div class="item-list">
-      <div class="list-item">
-        <div class="li-name">Docklands Sailing &amp; Watersports Centre</div>
-        <div class="li-text">Sailing, paddleboarding, and windsurfing on Millwall Outer Dock. A highly distinctive training option unique to Island life.</div>
-      </div>
-      <div class="list-item">
-        <div class="li-name">Third Space &amp; Sweat by BXR</div>
-        <div class="li-text">World-class luxury fitness facilities located at Canary Wharf. Elite-tier personal coaching, medical-grade recovery suites, and clean design.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 9 — Canary Wharf Cultural Pivot -->
-  <div class="card dark reveal">
-    <div class="ct">
-      <span class="eyebrow">Canary Wharf · 8 min by DLR</span>
-      <h2 class="card-title">A city within<br>a <em>city.</em></h2>
-      <p class="card-lead">The modern assumption that Canary Wharf is purely a commercial financial core misses its recent evolution into a competitive cultural and culinary landscape.</p>
-    </div>
-    <div class="item-list">
-      <div class="list-item">
-        <div class="li-name">The Dining Circuit</div>
-        <div class="li-text">Dishoom, Sticks'n'Sushi, Hawksmoor, and Pergola on the Wharf. Premium dining choices that sit fully competitive with Zone 1, without the crowds.</div>
-      </div>
-      <div class="list-item">
-        <div class="li-name">Crossrail Place Roof Garden</div>
-        <div class="li-text">Foster + Partners' 300-metre sheltered rooftop garden oasis. Hidden architectural terracing with exotic planting, open until 9pm daily.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 10 — Greenwich -->
-  <div class="card darker reveal" id="greenwich">
-    <div class="ct">
-      <span class="eyebrow">Greenwich · Direct by DLR or Foot Tunnel</span>
-      <h2 class="card-title">A World Heritage<br>Site as your <em>weekend.</em></h2>
-      <p class="card-lead">While most E14 properties list Greenwich as a generic neighborhood feature, here it functions as a literal extensions of your living space.</p>
-    </div>
-    <div class="pq">
-      <p>Twenty years of Friday morning walks through the Foot Tunnel. It never felt like a commute; it always felt like an escape.</p>
-      <cite>— The vendor</cite>
-    </div>
-    <div class="item-list">
-      <div class="list-item">
-        <div class="li-name">Greenwich Park <span class="li-dist">10 min walk</span></div>
-        <div class="li-text">180 acres of ancient royal parkland. Climb past the Observatory to the Prime Meridian line—the flat sits just seconds into the Eastern Hemisphere.</div>
-      </div>
-      <div class="list-item">
-        <div class="li-name">Greenwich Covered Market</div>
-        <div class="li-text">A historic, vibrant hub of independent artisan food stalls, antiquities, and independent design, active all through the weekend.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 12 — Heritage & Transit History -->
-  <div class="card reveal">
-    <div class="ct">
-      <span class="eyebrow">A sense of place</span>
-      <h2 class="card-title">The Island beneath<br><em>the glass.</em></h2>
-      <p class="card-lead">Before the clean modern lines of Equinox, this exact architectural plot served as a core connection point for London’s historic maritime and transit systems.</p>
-    </div>
-    <button class="read-more" onclick="toggleRead(this)">
-      Read the site history timeline <span class="read-more-icon">+</span>
-    </button>
-    <div class="card-body">
-      <div class="card-body-inner">
-        <p class="body muted">In 1872, this exact plot was the terminus of the Millwall Extension Railway, where passengers stepped off steam trains directly onto a river ferry jetty. In 1999, when the modern DLR line transitioned completely beneath the Thames to Greenwich, Equinox was built directly atop the footprint of that historic gateway.</p>
-        <div class="timeline" style="margin-top: 14px;">
-          <div class="tl-item"><span class="tl-year">1860s</span><p class="tl-text"><strong>Brunel's SS Great Eastern</strong> launched from the adjacent Millwall waterfront.</p></div>
-          <div class="tl-item"><span class="tl-year">1895</span><p class="tl-text">Island Gardens opens, legally protecting the classic Canaletto river view forever.</p></div>
-          <div class="tl-item"><span class="tl-year">1999</span><p class="tl-text">Equinox constructed on the footprint of the original railway heritage site.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 13 — INVESTMENT & CATCHMENT PIVOT (AUDIENCE DIRECTED) -->
-  <div class="card reveal" id="investment">
-    <div class="ct">
-      <span class="eyebrow">Investment &amp; Future-Proofing</span>
-      <h2 class="card-title">An anchor for<br><em>long-term value.</em></h2>
-      <p class="card-lead">While optimized for effortless professional lifestyle today, the local property infrastructure offers immense long-term equity and security.</p>
-    </div>
-    <div class="item-list">
-      <div class="list-item">
-        <div class="inv-item">
-          <div class="inv-name">Exceptional Catchment Security</div>
-          <div class="inv-meta">School Catchment Infrastructure</div>
-          <p class="li-text">The immediate area holds highly coveted primary catchments, including the over-subscribed Canary Wharf College. This provides exceptional asset protection and future-proofs the home for resale value down the line.</p>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="inv-item">
-          <div class="inv-name">The Greenwich Secondary Link</div>
-          <div class="inv-meta">Cross-River Accessibility</div>
-          <p class="li-text">The rapid cross-river connection opens immediate access to elite secondary institutions within the Royal Borough of Greenwich, preserving highly stable demographic demand across the micro-market.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- end feed -->
-
-<!-- FOOTER -->
-<footer>
-  <div class="ft-brand">Equinox · Douglas Path · Island Gardens · E14 3GR</div>
-  <p class="ft-note">This page is supplementary information prepared by the vendor — a personal companion to the formal estate agent particulars, not a legal replacement or structural representation. Travel times are approximate and subject to network changes. Prospective purchasers are advised to verify all legal, physical, and financial details independently via their appointed legal counsel. Not intended for public distribution or search engine indexing.</p>
-</footer>
-
-<script>
-// Read more toggle function
-function toggleRead(btn) {
-  const body = btn.nextElementSibling;
-  const icon = btn.querySelector('.read-more-icon');
-  const open = body.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  icon.textContent = open ? '×' : '+';
-}
-
-// Transport accordion function
-function toggleT(header) {
-  const body = header.nextElementSibling;
-  const tog  = header.querySelector('.t-toggle');
-  const open = body.classList.toggle('open');
-  tog.textContent = open ? '−' : '+';
-}
-
-// Scroll reveal configuration
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 30);
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-
-</body>
-</html>
-
-```
+.card.darker .li-name,
