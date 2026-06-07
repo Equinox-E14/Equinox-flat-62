@@ -138,7 +138,7 @@ a{color:inherit;text-decoration:none}
 .card.mid{background:var(--sage-dark)}
 .card.sage{background:var(--sage)}
 
-/* ── CARD TEXT BLOCK & HIGH CONTRAST COLORS ── */
+/* ── CARD TEXT BLOCK & COLOR ROBUSTNESS ── */
 .ct{padding:28px 24px 20px}
 .eyebrow{
   display:block;font-weight:500;
@@ -230,7 +230,7 @@ p.body.muted{color:#1E1F23}
 .card.dark .pq cite,
 .card.mid .pq cite{ color:rgba(249,248,246,.32) }
 
-/* ── EDITORIAL VENDOR MEMORY BRIDGE ──────── */
+/* Standalone memory bridge styling */
 .featured-memory {
   background: var(--cream);
   padding: 48px 24px;
@@ -365,3 +365,214 @@ p.body.muted{color:#1E1F23}
 }
 .card.dark .li-name,
 .card.darker .li-name,
+.card.mid .li-name{ color:var(--alabaster) }
+.card.sage .li-name { color: var(--text-dark); font-weight: 500; }
+.li-dist{
+  font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--bramble);white-space:nowrap;flex-shrink:0;
+  font-weight: 500;
+}
+.card.dark .li-dist,.card.mid .li-dist{ color:var(--oak) }
+.card.sage .li-dist { color: var(--sage-deeper); }
+.li-text{font-size:13px;line-height:1.72;color:#3A3B3F}
+.card.dark .li-text,.card.darker .li-text,.card.mid .li-text{ color:rgba(249,248,246,.6) }
+.card.sage .li-text { color: #2C2D31; }
+
+/* ── TRANSPORT ACCORDION ────────────────── */
+.t-modes{border-top:1px solid rgba(44,45,49,.12);margin-top:0}
+.t-head{
+  padding:15px 24px;
+  border-bottom:1px solid rgba(44,45,49,.08);
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--serif);font-style:italic;
+  font-size:17px;color:var(--text-dark);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;user-select:none;
+}
+.t-toggle{font-size:14px;color:var(--bramble);font-style:normal}
+.t-body{background:var(--alabaster);display:none;}
+.t-body.open{display:block}
+.route{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:9px 24px;border-bottom:1px solid rgba(44,45,49,.06);gap:10px;
+}
+.route-n覆{font-size:13px;color:var(--text-dark);flex:1;line-height:1.4}
+.route-t{
+  font-family:var(--serif);font-size:19px;
+  color:var(--bramble);white-space:nowrap;
+}
+.route-u{font-size:10px;color:var(--bramble)}
+
+/* River panel */
+.river-panel{background:var(--malm);padding:20px 24px}
+.river-panel h4{
+  font-family:var(--serif);font-style:italic;
+  font-size:15px;color:var(--alabaster);margin-bottom:8px;
+}
+.pier-flow{font-size:11px;color:rgba(249,248,246,.42);line-height:2.2}
+.pier-flow strong{color:var(--oak);font-weight:500}
+.river-note{margin-top:8px;font-size:10px;color:rgba(249,248,246,.28)}
+
+/* Meridian */
+.meridian-panel{
+  background:var(--malm);padding:24px;
+  position:relative;overflow:hidden;
+}
+.meridian-panel::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,rgba(193,154,107,.4),transparent);
+}
+.meridian-panel p{
+  font-family:var(--serif);font-style:italic;
+  font-size:16px;line-height:1.7;
+  color:rgba(249,248,246,.85);text-align:center;margin:0;
+}
+.meridian-panel strong{color:var(--oak);font-style:normal;font-weight:500}
+
+/* Timeline */
+.timeline{border-top:1px solid var(--rule)}
+.tl-item{
+  display:grid;grid-template-columns:60px 1fr;
+  gap:12px;padding:14px 24px;
+  border-bottom:1px solid var(--rule);align-items:start;
+}
+.tl-year{font-size:11px;letter-spacing:.09em;color:var(--bramble);font-weight:500;padding-top:2px}
+.tl-text{font-size:13px;line-height:1.72;color:#3A3B3F}
+.tl-text strong{color:var(--text-dark);font-weight:500}
+
+/* Links */
+.route-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--bramble);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.card.sage .route-link { color: var(--sage-deeper); }
+.route-link:active { color: var(--oak-dark); }
+
+/* Investment Section */
+.inv-item{padding:4px 0}
+.inv-name{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--text-dark);margin-bottom:2px}
+.inv-meta{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--bramble);margin-bottom:6px;font-weight:500;}
+
+/* Footer */
+footer{
+  background:var(--malm);
+  padding:32px 24px calc(32px + env(safe-area-inset-bottom,0px));
+  margin-top:3px;
+}
+.ft-brand{font-family:var(--serif);font-size:14px;color:rgba(249,248,246,.45);margin-bottom:10px}
+.ft-note{font-size:11px;line-height:1.72;color:rgba(249,248,246,.22)}
+
+/* ── REVEAL EFFECT ──────────────────────── */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Equinox · Island Gardens · E14 3GR</p>
+    <h1 class="hero-title">A calm retreat where water, light, and space <em>change the pace of the day.</em></h1>
+    <p class="hero-sub">A west-facing terrace home near the river — where the view is the reason, and everything else follows.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">2 Bed · 1 Bath · 3rd Floor</span>
+      <span class="hero-pill">26 sqm West-Facing Terrace</span>
+      <span class="hero-pill">Island Gardens DLR · Opposite</span>
+    </div>
+  </div>
+  <div class="hero-nudge"><span>↓ explore</span></div>
+</section>
+
+<nav class="nav">
+  <span class="nav-brand">Equinox · E14</span>
+  <div class="nav-links">
+    <a href="#top">Home</a>
+    <a href="#terrace">Terrace</a>
+    <a href="#area">Area</a>
+    <a href="#greenwich">Greenwich</a>
+    <a href="#gallery1">Gallery</a>
+    <a href="#investment">Investment</a>
+  </div>
+</nav>
+
+<div class="feed">
+
+  <div class="card dark reveal">
+    <div class="ct">
+      <span class="eyebrow">A note from the vendor</span>
+      <h2 class="card-title">Twenty years.<br>One <em>remarkable</em> home.</h2>
+      <p class="card-lead">I have often thought that this home gave me something increasingly rare in London: room to breathe.</p>
+      <p class="body light" style="margin-top: 14px;">Over twenty years, the river, the open sky, and the changing light around Island Gardens gradually shaped the rhythm of daily life here. Morning coffee outside, walks beside the Thames, and the ease of stepping into Greenwich whenever the mood suited became rituals, not just activities.</p>
+    </div>
+    <button class="read-more" onclick="toggleRead(this)">
+      Read more about this chapter <span class="read-more-icon">+</span>
+    </button>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <p class="body light">This became far more than simply a flat; it has been my sanctuary within the city. The true luxury here isn't something you can easily measure in a standard estate agent layout. It is the daily feeling of total peace it provides.</p>
+        <p class="body light">Leaving for the south coast now feels like the right next chapter, but the quiet rhythm of this place will be missed enormously.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card darker">
+    <div class="spec-strip">
+      <div class="spec-cell"><div class="spec-val">66</div><div class="spec-lbl">Sq metres</div></div>
+      <div class="spec-cell"><div class="spec-val">26</div><div class="spec-lbl">Sqm terrace</div></div>
+      <div class="spec-cell"><div class="spec-val">2</div><div class="spec-lbl">Bedrooms</div></div>
+      <div class="spec-cell"><div class="spec-val">3rd</div><div class="spec-lbl">Floor</div></div>
+    </div>
+  </div>
+
+  <section class="featured-memory reveal">
+    <div class="memory-container">
+      <blockquote class="memory-quote">
+        I vividly remember the day I first saw the terrace. It was one of those glorious, sunny and warm April days we sometimes get. I was exiting Island Gardens DLR station and, on a complete whim, I walked into the marketing office of the development. I asked about viewing the flat, and the sales agent took me straight up to see it. I walked into the living room that was flooded with light and straight out onto the terrace. I knew at that moment I was lost. I signed the purchase contract a couple of days later.
+      </blockquote>
+      <div class="memory-meta">
+        <span class="memory-line"></span>
+        <span class="memory-author">A personal reflection · The Terrace at Flat 62</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="card sage reveal" id="terrace">
+    <div class="ct">
+      <span class="eyebrow">The terrace</span>
+      <h2 class="card-title">26 square metres<br>of <em>skyline canvas.</em></h2>
+      <p class="card-lead">Facing west, the terrace catches the afternoon sun.固定 Thirteen metres of it.</p>
+    </div>
+    <div class="view-tags">
+      <span class="vtag">← City of London (North West)</span>
+      <span class="vtag">Canary Wharf (Lean North) ↑</span>
+      <span class="vtag">Cutty Sark Masts (Look South) ↓</span>
+    </div>
+    <div class="inline-photo">
+      <img src="https://lh3.googleusercontent.com/d/176ay21oWbmIQ8b_v0MML4KvMWxOtLXRX" alt="The west-facing terrace at Equinox">
+    </div>
+    <button class="read-more" onclick="toggleRead(this)">
+      Read terrace orientation & design <span class="read-more-icon">+</span>
+    </button>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <p class="body muted">Breakfast outside became habitual. Meals stretched into the evening. A quick drink after work turned into an hour as the light shifted across the skyline. Planting softens the edges, the outdoor kitchen makes it genuinely practical, and the water feature adds a quiet rhythm.</p>
+        <p class="body muted">As dusk settles, the light doesn't disappear so much as change character — windows start to glow, the skyline gradually illuminates, and the terrace becomes a calm vantage point over a softly lit London at night.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card darker reveal" id="gallery1">
+    <div class="ct">
+      <span class="eyebrow">Gallery · The terrace & the view</span>
+      <h2 class="card-title">Life on <em>the terrace.</em></h2>
+    </div>
+    <div class="card-photo">
+      <img src="https://lh3.googleusercontent.com/d/1uK69s8nk0hg1ILYyPQCPJSfXj6VrIECB" alt="The terrace">
+      <div class="card-photo-caption">
+        <div class="cpc-label">The terrace</div>
