@@ -60,13 +60,11 @@ a{color:inherit;text-decoration:none}
 .hero-eyebrow{
   font-size:11px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--oak);margin-bottom:14px;
-  animation:fadeUp 1.4s .1s cubic-bezier(.16,1,.3,1) both;
 }
 .hero-title{
   font-family:var(--serif);font-weight:300;
   font-size:clamp(34px,9vw,52px);
   line-height:1.1;color:var(--alabaster);margin-bottom:16px;
-  animation:fadeUp 1.4s .2s cubic-bezier(.16,1,.3,1) both;
 }
 .hero-title em{font-style:italic;color:rgba(249,248,246,.5)}
 .hero-sub{
@@ -74,11 +72,9 @@ a{color:inherit;text-decoration:none}
   color:rgba(249,248,246,.7);
   border-left:2px solid var(--oak);padding-left:14px;
   max-width:320px;margin-bottom:28px;
-  animation:fadeUp 1.4s .3s cubic-bezier(.16,1,.3,1) both;
 }
 .hero-pills{
   display:flex;gap:8px;flex-wrap:wrap;
-  animation:fadeUp 1.4s .4s cubic-bezier(.16,1,.3,1) both;
 }
 .hero-pill{
   font-size:10px;letter-spacing:.09em;text-transform:uppercase;
@@ -395,7 +391,7 @@ p.body.muted{color:#1E1F23}
   display:flex;justify-content:space-between;align-items:baseline;
   padding:9px 24px;border-bottom:1px solid rgba(44,45,49,.06);gap:10px;
 }
-.route-n覆{font-size:13px;color:var(--text-dark);flex:1;line-height:1.4}
+.route-n{font-size:13px;color:var(--text-dark);flex:1;line-height:1.4}
 .route-t{
   font-family:var(--serif);font-size:19px;
   color:var(--bramble);white-space:nowrap;
@@ -467,13 +463,13 @@ footer{
 .ft-brand{font-family:var(--serif);font-size:14px;color:rgba(249,248,246,.45);margin-bottom:10px}
 .ft-note{font-size:11px;line-height:1.72;color:rgba(249,248,246,.22)}
 
-/* ── REVEAL EFFECT ──────────────────────── */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+/* ── REVEAL EFFECT (FALLBACK INITIALISED) ──────────────── */
+.reveal{opacity:1;transform:none}
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -489,6 +485,7 @@ footer{
   <div class="hero-nudge"><span>↓ explore</span></div>
 </section>
 
+<!-- NAV -->
 <nav class="nav">
   <span class="nav-brand">Equinox · E14</span>
   <div class="nav-links">
@@ -501,8 +498,10 @@ footer{
   </div>
 </nav>
 
+<!-- ═══ FEED CONTAINER ════════════════════════════ -->
 <div class="feed">
 
+  <!-- CARD 1 — Vendor note -->
   <div class="card dark reveal">
     <div class="ct">
       <span class="eyebrow">A note from the vendor</span>
@@ -521,6 +520,7 @@ footer{
     </div>
   </div>
 
+  <!-- Spec strip -->
   <div class="card darker">
     <div class="spec-strip">
       <div class="spec-cell"><div class="spec-val">66</div><div class="spec-lbl">Sq metres</div></div>
@@ -530,6 +530,7 @@ footer{
     </div>
   </div>
 
+  <!-- EDITORIAL BRIDGE: STANDALONE VENDOR MEMORY -->
   <section class="featured-memory reveal">
     <div class="memory-container">
       <blockquote class="memory-quote">
@@ -542,11 +543,12 @@ footer{
     </div>
   </section>
 
+  <!-- CARD 2 — Terrace intro + inline photo -->
   <div class="card sage reveal" id="terrace">
     <div class="ct">
       <span class="eyebrow">The terrace</span>
       <h2 class="card-title">26 square metres<br>of <em>skyline canvas.</em></h2>
-      <p class="card-lead">Facing west, the terrace catches the afternoon sun.固定 Thirteen metres of it.</p>
+      <p class="card-lead">Facing west, the terrace catches the afternoon sun. Thirteen metres of it.</p>
     </div>
     <div class="view-tags">
       <span class="vtag">← City of London (North West)</span>
@@ -567,6 +569,7 @@ footer{
     </div>
   </div>
 
+  <!-- CARD 3 — Gallery 1: The terrace & the view -->
   <div class="card darker reveal" id="gallery1">
     <div class="ct">
       <span class="eyebrow">Gallery · The terrace & the view</span>
@@ -576,3 +579,281 @@ footer{
       <img src="https://lh3.googleusercontent.com/d/1uK69s8nk0hg1ILYyPQCPJSfXj6VrIECB" alt="The terrace">
       <div class="card-photo-caption">
         <div class="cpc-label">The terrace</div>
+        <div class="cpc-text">Late afternoon in September — the light that made us stay.</div>
+      </div>
+    </div>
+    <div class="card-photo">
+      <img src="https://lh3.googleusercontent.com/d/1nrSc6Xd4CI_ceDcGdp-u_NltmqTQfGL1" alt="Sundowners on the terrace">
+      <div class="card-photo-caption">
+        <div class="cpc-label">Sundowners on the terrace</div>
+        <div class="cpc-text">A quick drink after work that somehow lasted all evening.</div>
+      </div>
+    </div>
+    <div class="card-photo">
+      <img src="https://lh3.googleusercontent.com/d/1GstiVQiVJikr4u10kDEOwTELDKq0a9AL" alt="BBQ evening on the terrace">
+      <div class="card-photo-caption">
+        <div class="cpc-label">BBQ evening</div>
+        <div class="cpc-text">The terrace as an outdoor room — the city as the backdrop.</div>
+      </div>
+    </div>
+    <div class="card-photo">
+      <img src="https://lh3.googleusercontent.com/d/1cOgAcXTvFzQzknMjHPd0K6l3cOzE35s-" alt="Breakfast on the terrace">
+      <div class="card-photo-caption">
+        <div class="cpc-label">Breakfast on the terrace</div>
+        <div class="cpc-text">The best seat in the home — and it's outside.</div>
+      </div>
+    </div>
+    <div class="card-photo">
+      <img src="https://lh3.googleusercontent.com/d/1xgjEpfljZxS7Y8Hqm22Nai0KCRSk2BbQ" alt="The view west">
+      <div class="card-photo-caption">
+        <div class="cpc-label">The view west</div>
+        <div class="cpc-text">The sky over the city — the view that makes you stop every time.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 5 — Area: Green spaces -->
+  <div class="card sage reveal" id="area">
+    <div class="ct">
+      <span class="eyebrow">The area</span>
+      <h2 class="card-title">A peninsula wrapped in<br><em>green and water.</em></h2>
+      <p class="card-lead">The Isle of Dogs is bounded by water on three sides. That unique geography gives it something rare for inner London: genuine open breathing space, a working city farm, and miles of uninterrupted river path right on your doorstep.</p>
+    </div>
+    <div class="item-list">
+      <div class="list-item">
+        <div class="li-name">Island Gardens <span class="li-dist">Adjacent</span></div>
+        <div class="li-text">The legendary panorama of the Naval College that Canaletto painted in the 1750s — legally protected and sitting immediately next door.</div>
+      </div>
+      <div class="list-item">
+        <div class="li-name">Greenwich Foot Tunnel <span class="li-dist">5 min walk</span></div>
+        <div class="li-text">A Victorian architectural wonder under the Thames, open 24/7, emerging directly below the Cutty Sark.</div>
+      </div>
+      <div class="list-item">
+        <div class="li-name">Mudchute Park & Farm <span class="li-dist">10 min walk</span></div>
+        <div class="li-text">32 acres of forested nature reserve and open countryside, home to one of Europe's largest city farms. Watching horses graze with Canary Wharf rising behind them never gets old.</div>
+      </div>
+    </div>
+    <button class="read-more" onclick="toggleRead(this)">
+      Read about the Thames Path route <span class="read-more-icon">+</span>
+    </button>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <p class="body muted" style="margin-bottom: 16px;">The Thames Path National Trail runs the entire north bank of the Isle of Dogs loop — running past historic launch sites and the Docklands Sailing Centre before sweeping into Canary Wharf. The full loop is approximately 7 km, completely flat, and beautifully traffic-free.</p>
+        <a class="route-link" href="https://www.alltrails.com/en-gb/trail/england/london/isle-of-dogs-circular" target="_blank" rel="noopener">Explore the Isle of Dogs Circular Route on AllTrails →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTEGRATED GOOGLE DRIVE IMAGE: MACRO PENINSULA MAP -->
+  <div class="card dark reveal">
+    <div class="inline-photo">
+      <img src="https://lh3.googleusercontent.com/d/1GHKxocxZPrS9Ffo2kNPeXWawnFtnW6nF" alt="Isle of Dogs Peninsula Map Loop">
+    </div>
+    <div class="card-photo-caption">
+      <div class="cpc-label">The Peninsula Geography</div>
+      <div class="cpc-text">Bounded by water on three sides — an isolated, green sanctuary within Zone 2.</div>
+    </div>
+  </div>
+
+  <!-- CARD 6 — Gallery 2: Seasons -->
+  <div class="card darker reveal" id="gallery2">
+    <div class="ct">
+      <span class="eyebrow">Gallery · The Island through the seasons</span>
+      <h2 class="card-title">The Island,<br><em>all year round.</em></h2>
+    </div>
+    <div class="card-photo">
+      <img src="https://lh3.googleusercontent.com/d/1PXwyiCQAPxdSnR989DueY3oRWdjqpp1Y" alt="Mudchute Farm — winter sunrise">
+      <div class="card-photo-caption">
+        <div class="cpc-label">Mudchute Farm — winter sunrise</div>
+        <div class="cpc-text">Frost on the fields, Canary Wharf catching the first light.</div>
+      </div>
+    </div>
+    <div class="card-photo">
+      <img src="https://lh3.googleusercontent.com/d/1GagtJaDRVwlyXXbmrtoVasqi8RNviCdh" alt="Millwall Park in spring">
+      <div class="card-photo-caption">
+        <div class="cpc-label">Millwall Park in spring</div>
+        <div class="cpc-text">Eight minutes from the front door, and a world away from the city.</div>
+      </div>
+    </div>
+    <div class="card-photo">
+      <img src="https://lh3.googleusercontent.com/d/1sSmRgKaLBPgpIK4zSTh-smzP1vJs0GY4" alt="Cherry blossom, Millwall Park">
+      <div class="card-photo-caption">
+        <div class="cpc-label">Cherry blossom, Millwall Park</div>
+        <div class="cpc-text">Every April, without fail — one of the quieter pleasures of living here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 7 — Transport -->
+  <div class="card reveal">
+    <div class="ct">
+      <span class="eyebrow">Connected without feeling busy</span>
+      <h2 class="card-title">Every direction,<br><em>within reach.</em></h2>
+      <p class="card-lead">With Island Gardens DLR located directly opposite, the commute is effortless: Canary Wharf in 8 minutes, Bank in under 20, and fast links to the Elizabeth Line.</p>
+    </div>
+
+    <!-- INTEGRATED GOOGLE DRIVE IMAGE: MICRO LOCAL AREA MAP DETAIL -->
+    <div class="inline-photo" style="border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+      <img src="https://lh3.googleusercontent.com/d/1zQG9vQ4QTNlGbVX-63pTJp9kiEhnXHGx" alt="Island Gardens Micro Location Detail Map">
+    </div>
+    <div class="card-photo-caption" style="background: var(--cream); color: var(--text-dark); padding: 12px 24px 16px;">
+      <div class="cpc-label" style="color: var(--bramble);">Micro-Location Clarity</div>
+      <div class="cpc-text" style="color: var(--text-dark);">The geometric synergy of Island Gardens park, the 24/7 Foot Tunnel link, and the DLR station sitting right at your doorstep.</div>
+    </div>
+
+    <div class="t-modes" style="margin-top: 3px;">
+      <div class="t-head" onclick="toggleT(this)">
+        DLR & Crossrail Connections
+        <span class="t-toggle">+</span>
+      </div>
+      <div class="t-body">
+        <div class="route"><span class="route-n">Island Gardens → Canary Wharf</span><span class="route-t">8 <span class="route-u">min</span></span></div>
+        <div class="route"><span class="route-n">Island Gardens → Bank</span><span class="route-t">~18 <span class="route-u">min</span></span></div>
+        <div class="route"><span class="route-n">Canary Wharf → Tottenham Court Road</span><span class="route-t">14 <span class="route-u">min</span></span></div>
+        <div class="route"><span class="route-n">Canary Wharf → Heathrow T2/T3</span><span class="route-t">40 <span class="route-u">min</span></span></div>
+      </div>
+    </div>
+    <div class="river-panel">
+      <h4>Uber Boat — Masthouse Terrace Pier</h4>
+      <div class="pier-flow">Barking → N. Greenwich → <strong>Masthouse Terrace</strong> → Canary Wharf → London Bridge → Waterloo</div>
+      <p class="river-note">Oyster cards accepted · An atmospheric, low-stress alternative to the morning commute.</p>
+    </div>
+  </div>
+
+  <!-- CARD 8 — Fitness -->
+  <div class="card sage reveal">
+    <div class="ct">
+      <span class="eyebrow">Health & fitness</span>
+      <h2 class="card-title">An active life,<br><em>naturally built-in.</em></h2>
+      <p class="card-lead">From open-water discipline on the docks to high-performance training hubs in the Wharf, the area supports mental and physical wellbeing effortlessly.</p>
+    </div>
+    <div class="item-list">
+      <div class="list-item">
+        <div class="li-name">Docklands Sailing & Watersports Centre</div>
+        <div class="li-text">Sailing, paddleboarding, and windsurfing on Millwall Outer Dock. A highly distinctive training option unique to Island life.</div>
+      </div>
+      <div class="list-item">
+        <div class="li-name">Third Space & Sweat by BXR</div>
+        <div class="li-text">World-class luxury fitness facilities located at Canary Wharf. Elite-tier personal coaching, medical-grade recovery suites, and clean design.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 9 — Canary Wharf Cultural Pivot -->
+  <div class="card dark reveal">
+    <div class="ct">
+      <span class="eyebrow">Canary Wharf · 8 min by DLR</span>
+      <h2 class="card-title">A city within<br>a <em>city.</em></h2>
+      <p class="card-lead">The modern assumption that Canary Wharf is purely a commercial financial core misses its recent evolution into a competitive cultural and culinary landscape.</p>
+    </div>
+    <div class="item-list">
+      <div class="list-item">
+        <div class="li-name">The Dining Circuit</div>
+        <div class="li-text">Dishoom, Sticks'n'Sushi, Hawksmoor, and Pergola on the Wharf. Premium dining choices that sit fully competitive with Zone 1, without the crowds.</div>
+      </div>
+      <div class="list-item">
+        <div class="li-name">Crossrail Place Roof Garden</div>
+        <div class="li-text">Foster + Partners' 300-metre sheltered rooftop garden oasis. Hidden architectural terracing with exotic planting, open until 9pm daily.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 10 — Greenwich -->
+  <div class="card darker reveal" id="greenwich">
+    <div class="ct">
+      <span class="eyebrow">Greenwich · Direct by DLR or Foot Tunnel</span>
+      <h2 class="card-title">A World Heritage<br>Site as your <em>weekend.</em></h2>
+      <p class="card-lead">While most E14 properties list Greenwich as a generic neighborhood feature, here it functions as a literal extension of your living space.</p>
+    </div>
+    <div class="item-list">
+      <div class="list-item">
+        <div class="li-name">Greenwich Park <span class="li-dist">10 min walk</span></div>
+        <div class="li-text">180 acres of ancient royal parkland. Climb past the Observatory to the Prime Meridian line—the flat sits just seconds into the Western Hemisphere.</div>
+      </div>
+      <div class="list-item">
+        <div class="li-name">Greenwich Covered Market</div>
+        <div class="li-text">A historic, vibrant hub of independent artisan food stalls, antiquities, and independent design, active all through the weekend.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 12 — Heritage & Transit History -->
+  <div class="card reveal">
+    <div class="ct">
+      <span class="eyebrow">A sense of place</span>
+      <h2 class="card-title">The Island beneath<br><em>the glass.</em></h2>
+      <p class="card-lead">Before the clean modern lines of Equinox, this exact architectural plot served as a core connection point for London’s historic maritime and transit systems.</p>
+    </div>
+    <button class="read-more" onclick="toggleRead(this)">
+      Read the site history timeline <span class="read-more-icon">+</span>
+    </button>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <p class="body muted">In 1872, this exact plot was the terminus of the Millwall Extension Railway, where passengers stepped off steam trains directly onto a river ferry jetty. In 1999, when the modern DLR line transitioned completely beneath the Thames to Greenwich, Equinox was built directly atop the footprint of that historic gateway.</p>
+        <div class="timeline" style="margin-top: 14px;">
+          <div class="tl-item"><span class="tl-year">1860s</span><p class="tl-text"><strong>Brunel's SS Great Eastern</strong> launched from the adjacent Millwall waterfront.</p></div>
+          <div class="tl-item"><span class="tl-year">1895</span><p class="tl-text">Island Gardens opens, legally protecting the classic Canaletto river view forever.</p></div>
+          <div class="tl-item"><span class="tl-year">1999</span><p class="tl-text">Equinox constructed on the footprint of the original railway heritage site.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 13 — INVESTMENT & CATCHMENT PIVOT -->
+  <div class="card reveal" id="investment">
+    <div class="ct">
+      <span class="eyebrow">Investment & Future-Proofing</span>
+      <h2 class="card-title">An anchor for<br><em>long-term value.</em></h2>
+      <p class="card-lead">While optimized for effortless professional lifestyle today, the local property infrastructure offers immense long-term equity and security.</p>
+    </div>
+    <div class="item-list">
+      <div class="list-item">
+        <div class="inv-item">
+          <div class="inv-name">Exceptional Catchment Security</div>
+          <div class="inv-meta">School Catchment Infrastructure</div>
+          <p class="li-text">The immediate area holds highly coveted primary catchments, including the over-subscribed Canary Wharf College. This provides exceptional asset protection and future-proofs the home for resale value down the line.</p>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="inv-item">
+          <div class="inv-name">The Greenwich Secondary Link</div>
+          <div class="inv-meta">Cross-River Accessibility</div>
+          <p class="li-text">The rapid cross-river connection opens immediate access to elite secondary institutions within the Royal Borough of Greenwich, preserving highly stable demographic demand across the micro-market.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end feed -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-brand">Equinox · Douglas Path · Island Gardens · E14 3GR</div>
+  <p class="ft-note">This page is supplementary information prepared by the vendor — a personal companion to the formal estate agent particulars, not a legal replacement or structural representation. Travel times are approximate and subject to network changes. Prospective purchasers are advised to verify all legal, physical, and financial details independently via their appointed legal counsel. Not intended for public distribution or search engine indexing.</p>
+</footer>
+
+<script>
+// Read more toggle function
+function toggleRead(btn) {
+  const body = btn.nextElementSibling;
+  const icon = btn.querySelector('.read-more-icon');
+  if (body) {
+    const open = body.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    icon.textContent = open ? '×' : '+';
+  }
+}
+
+// Transport accordion function
+function toggleT(header) {
+  const body = header.nextElementSibling;
+  const tog  = header.querySelector('.t-toggle');
+  if (body) {
+    const open = body.classList.toggle('open');
+    tog.textContent = open ? '−' : '+';
+  }
+}
+</script>
+
+</body>
+</html>
